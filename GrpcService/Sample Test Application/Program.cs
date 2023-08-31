@@ -15,8 +15,9 @@ namespace GrpcService.Consumer
         static void Main(string[] args)
         {
             bool showRTT = false;
+            var properties = new ConnectionProperties(new string[] { "localhost" }, 12000, showRTT);
 
-            IClient client = ClientManager.GetClient(new string[] { "localhost" }, 12000, showRTT);  //Not displaying RTT by default since I/O is a costly operation. But setting it to true will display each time taken 
+            IClient client = ClientManager.GetClient(properties);  //Not displaying RTT by default since I/O is a costly operation. But setting it to true will display each time taken 
 
             Parallel.For(0, 10000, (x) => { var isPrime = client.SendMessage(new RequestMessage() { Id = x, Number = x % 1000 }).Result; });
 

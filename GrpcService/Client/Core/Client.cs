@@ -11,11 +11,11 @@ namespace Client.Core
         private int port;
         private bool _showRTT;
 
-        public Client(string[] serverIps, int port, bool showRTT)
+        public Client(ConnectionProperties properties)
         {
-            this.serverIps = serverIps;
-            this.port = port;
-            _showRTT = showRTT;
+            this.serverIps = properties.Hostname;
+            this.port = properties.Port;
+            _showRTT = properties.ShowRTT;
         }
 
         public async Task<bool> SendMessage(RequestMessage message)

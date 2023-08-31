@@ -8,9 +8,9 @@ namespace Client.Core
 {
     public class ClientManager
     {
-        public static Client GetClient(string[] serverIps,  int port, bool showRTT)
+        public static Client GetClient(ConnectionProperties properties)
         {
-            return new Client(serverIps, port, showRTT);
+            return new Client(properties);
         }
     }
 }
