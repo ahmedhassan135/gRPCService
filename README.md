@@ -32,4 +32,4 @@ Note: This application due to the client.dll attached has a dependency for the l
   2. Compile the Client project
   3. Compile the Sample Test Application
   4. Run the Server
-  5. Run the sample test application
+  5. Run the sample test application (You may need to reattach the reference to the client.dll located in the client project binaries)
